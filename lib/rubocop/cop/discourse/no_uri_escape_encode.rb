@@ -16,7 +16,7 @@ module RuboCop
       #   UrlHelper.encode("https://a%20a.com?a='a%22")
       #   Addressable::URI.encode("https://a%20a.com?a='a%22")
       class NoURIEscapeEncode < Cop
-        MSG = 'URI.escape, URI.encode, URI.unescape, URI.decode are deprecated and should not be used.'
+        MSG = "URI.escape, URI.encode, URI.unescape, URI.decode are deprecated and should not be used."
 
         def_node_matcher :using_uri_escape?, <<-MATCHER
           (send (const nil? :URI) :escape ...)

@@ -6,15 +6,15 @@ module RuboCop
       # Avoid using chdir - it is not thread safe.
       #
       # Instead, you may be able to use:
-      # Discourse::Utils.execute_command(chdir: 'test') do |runner|
-      #   runner.exec('pwd')
+      # Discourse::Utils.execute_command(chdir: "test") do |runner|
+      #   runner.exec("pwd")
       # end
       #
       # @example
       #   # bad
-      #   Dir.chdir('test')
+      #   Dir.chdir("test")
       class NoChdir < Cop
-        MSG = 'Chdir is not thread safe.'
+        MSG = "Chdir is not thread safe."
 
         def_node_matcher :using_dir_chdir?, <<-MATCHER
           (send (const nil? :Dir) :chdir ...)
