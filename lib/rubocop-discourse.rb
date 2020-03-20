@@ -1,3 +1,4 @@
 # frozen_string_literal: true
 
-require_relative "rubocop/cop/discourse_cops"
+path = File.join(__dir__, "rubocop", "cop", "discourse_cops", "*.rb")
+Dir[path].each { |file| require file }
