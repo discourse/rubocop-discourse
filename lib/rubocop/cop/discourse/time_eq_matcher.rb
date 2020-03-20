@@ -2,7 +2,7 @@
 
 module RuboCop
   module Cop
-    module DiscourseCops
+    module Discourse
       # Use `time_eq` matcher with timestamps in specs.
       #
       # @example

@@ -2,7 +2,7 @@
 
 module RuboCop
   module Cop
-    module DiscourseCops
+    module Discourse
       # Avoid using chdir - it is not thread safe.
       #
       # Instead, you may be able to use:

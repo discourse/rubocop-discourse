@@ -2,7 +2,7 @@
 
 module RuboCop
   module Cop
-    module DiscourseCops
+    module Discourse
       # Do not use URI.escape and its ilk, they are deprecated
       # with a warning in the ruby source. Instead use
       # Addressable::URI, which has encode, encode_component,

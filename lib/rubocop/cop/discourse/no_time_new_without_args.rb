@@ -2,7 +2,7 @@
 
 module RuboCop
   module Cop
-    module DiscourseCops
+    module Discourse
       # Use `Time.zone.now` instead of `Time.new` without arguments.
       #
       # @example
