@@ -1,0 +1,14 @@
+Discourse/NoChdir:
+  Enabled: true
+
+Discourse/NoDirectMultisiteManipulation:
+  Enabled: true
+
+Discourse/NoTimeNewWithoutArgs:
+  Enabled: true
+
+Discourse/NoUriEscapeEncode:
+  Enabled: true
+
+Discourse/TimeEqMatcher:
+  Enabled: true

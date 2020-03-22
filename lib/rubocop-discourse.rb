@@ -1,4 +1,9 @@
 # frozen_string_literal: true
 
-path = File.join(__dir__, "rubocop", "cop", "discourse", "*.rb")
-Dir[path].each { |file| require file }
+require "rubocop"
+require_relative "rubocop/discourse"
+require_relative "rubocop/discourse/inject"
+
+RuboCop::Discourse::Inject.defaults!
+
+require_relative "rubocop/cop/discourse_cops"
