@@ -19,7 +19,7 @@ module RuboCop
             (send nil? :expect
               (send ... #timestamp_suffix?))
             {:to :not_to :to_not}
-            (send nil? :eq #not_nil))
+            (send nil? :eq #not_nil?))
         MATCHER
 
         def on_send(node)
@@ -40,8 +40,8 @@ module RuboCop
           property =~ /_at$/
         end
 
-        def not_nil(expression)
-          expression != [s(:nil)]
+        def not_nil?(expression)
+          !expression.nil_type?
         end
       end
     end
