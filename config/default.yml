@@ -20,3 +20,9 @@ Discourse/TimeEqMatcher:
   Patterns:
   - _spec.rb
   - "(?:^|/)spec/"
+
+Discourse/NoJsonParseResponse:
+  Enabled: true
+  Patterns:
+  - _spec.rb
+  - "(?:^|/)spec/"
