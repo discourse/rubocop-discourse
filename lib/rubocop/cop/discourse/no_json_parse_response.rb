@@ -21,13 +21,7 @@ module RuboCop
               (send nil? :response) :body))
         MATCHER
 
-          # s(:send,
-          #   s(:const, nil, :JSON), :parse,
-          #   s(:send,
-          #     s(:send, nil, :response), :body))
-
         def on_send(node)
-          # puts node.inspect
           return unless json_parse_body?(node)
 
           add_offense(node, message: MSG)
