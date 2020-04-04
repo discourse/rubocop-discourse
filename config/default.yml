@@ -1,14 +1,22 @@
 Discourse/NoChdir:
   Enabled: true
 
-Discourse/NoDirectMultisiteManipulation:
-  Enabled: true
-
 Discourse/NoTimeNewWithoutArgs:
   Enabled: true
 
 Discourse/NoUriEscapeEncode:
   Enabled: true
 
+# Specs
+
+Discourse/NoDirectMultisiteManipulation:
+  Enabled: true
+  Patterns:
+  - _spec.rb
+  - "(?:^|/)spec/"
+
 Discourse/TimeEqMatcher:
   Enabled: true
+  Patterns:
+  - _spec.rb
+  - "(?:^|/)spec/"
