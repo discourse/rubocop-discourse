@@ -16,11 +16,6 @@ AllCops:
 Discourse:
   Enabled: true
 
-Discourse/NoChdir:
-  Exclude:
-    - 'spec/**/*' # Specs are run sequentially, so chdir can be used
-    - 'plugins/*/spec/**/*'
-
 # Prefer &&/|| over and/or.
 Style/AndOr:
   Enabled: true
