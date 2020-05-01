@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency "rubocop", ">= 0.69.0"
+  s.add_runtime_dependency "rubocop-rspec", ">= 1.39.0"
 
   s.add_development_dependency "rake", "~> 13.0"
 end
