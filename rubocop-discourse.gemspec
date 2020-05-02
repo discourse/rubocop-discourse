@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "rubocop-discourse"
-  s.version     = "2.0.1"
+  s.version     = "2.1.0"
   s.summary     = "Custom rubocop cops used by Discourse"
   s.authors     = ["David Taylor"]
   s.files       = `git ls-files`.split($/)
