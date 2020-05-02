@@ -7,5 +7,5 @@ Then add the following to `.rubocop.yml`:
 
 ```yml
 inherit_gem:
-  rubocop-discourse: .rubocop.yml
+  rubocop-discourse: default.yml
 ```
