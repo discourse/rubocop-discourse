@@ -4,14 +4,28 @@ Discourse/NoChdir:
     - 'spec/**/*' # Specs are run sequentially, so chdir can be used
     - 'plugins/*/spec/**/*'
 
-Discourse/NoDirectMultisiteManipulation:
-  Enabled: true
-
 Discourse/NoTimeNewWithoutArgs:
   Enabled: true
 
 Discourse/NoUriEscapeEncode:
   Enabled: true
 
+# Specs
+
+Discourse/NoDirectMultisiteManipulation:
+  Enabled: true
+  Patterns:
+  - _spec.rb
+  - "(?:^|/)spec/"
+
 Discourse/TimeEqMatcher:
   Enabled: true
+  Patterns:
+  - _spec.rb
+  - "(?:^|/)spec/"
+
+Discourse/NoJsonParseResponse:
+  Enabled: true
+  Patterns:
+  - _spec.rb
+  - "(?:^|/)spec/"
