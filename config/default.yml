@@ -7,7 +7,7 @@ Discourse/NoChdir:
 Discourse/NoTimeNewWithoutArgs:
   Enabled: true
 
-Discourse/NoUriEscapeEncode:
+Discourse/NoURIEscapeEncode:
   Enabled: true
 
 # Specs
