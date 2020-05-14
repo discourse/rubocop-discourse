@@ -62,11 +62,11 @@ module RuboCop
         MATCHER
 
         def_node_matcher :using_t_references?, <<-MATCHER
-          (send (lvar :t) :references ...)
+          (send (lvar _) :references ...)
         MATCHER
 
         def_node_matcher :using_t_belongs_to?, <<-MATCHER
-          (send (lvar :t) :belongs_to ...) 
+          (send (lvar _) :belongs_to ...)
         MATCHER
 
         def on_send(node)
