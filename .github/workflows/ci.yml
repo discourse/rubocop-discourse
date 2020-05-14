@@ -29,6 +29,9 @@ jobs:
 
       - name: Rubocop
         run: bundle exec rubocop
+      
+      - name: Rspec
+        run: bundle exec rspec spec
 
   publish:
     if: contains(github.ref, 'refs/tags/v')
