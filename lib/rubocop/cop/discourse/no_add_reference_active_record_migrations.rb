@@ -47,9 +47,7 @@ module RuboCop
         MATCHER
 
         def on_send(node)
-          puts node
           return if !using_add_reference?(node)
-          puts 'using add ref'
           add_offense(node, message: MSG)
         end
       end
