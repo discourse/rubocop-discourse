@@ -35,12 +35,12 @@ module RuboCop
       #   SQL
       # end
       class NoAddReferenceActiveRecordMigration < Cop
-        MSG = <<~HEREDOC
+        MSG = <<~MSG
           add_reference is high-risk for large tables and has too much background magic.
           Instead, write a disable_ddl_transactions! migration and write custom SQL to
           add the new column and CREATE INDEX CONCURRENTLY. Use the IF NOT EXISTS clause
           to make the migration re-runnable if it fails partway through.
-        HEREDOC
+        MSG
 
         def_node_matcher :using_add_reference?, <<-MATCHER
           (send nil? :add_reference ...)
