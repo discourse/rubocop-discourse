@@ -3,10 +3,17 @@
 module RuboCop
   module Cop
     module Discourse
-      # add_reference in ActiveRecord migrations is magic, and does
+      # The methods:
+      #
+      # * add_reference
+      # * add_belongs_to
+      # * t.references
+      # * t.belongs_to
+      #
+      # in ActiveRecord migrations are magic, and they all do
       # some unexpected things in the background. For example, by default
-      # it adds an index at the same time, but not concurrently, which is
-      # a nightmare for large tables.
+      # add_reference adds an index at the same time, but not concurrently,
+      # which is a nightmare for large tables.
       #
       # Instead, inside a disable_ddl_transaction! migration we should create
       # the new column (with any defaults and options required) and the index
@@ -19,6 +26,9 @@ module RuboCop
       # # bad
       # def up
       #   add_reference :posts, :image_upload
+      #   # or add_belongs_to :posts, :image_upload
+      #   # or t.references :image_upload when doing create_table do |t|
+      #   # or t.belongs_to :image_upload when doing create_table do |t|
       # end
       #
       # # good
@@ -34,9 +44,10 @@ module RuboCop
       #     index_posts_on_image_upload_id ON posts USING btree (image_upload_id)
       #   SQL
       # end
-      class NoAddReferenceActiveRecordMigration < Cop
+      class NoAddReferenceOrAliasesActiveRecordMigration < Cop
         MSG = <<~MSG
-          add_reference is high-risk for large tables and has too much background magic.
+          AR methods add_reference, add_belongs_to, t.references, and t.belongs_to are
+          high-risk for large tables and have too many background magic operations.
           Instead, write a disable_ddl_transactions! migration and write custom SQL to
           add the new column and CREATE INDEX CONCURRENTLY. Use the IF NOT EXISTS clause
           to make the migration re-runnable if it fails partway through.
@@ -46,8 +57,25 @@ module RuboCop
           (send nil? :add_reference ...)
         MATCHER
 
+        def_node_matcher :using_add_belongs_to?, <<-MATCHER
+          (send nil? :add_belongs_to ...)
+        MATCHER
+
+        def_node_matcher :using_t_references?, <<-MATCHER
+          (send (lvar :t) :references ...)
+        MATCHER
+
+        def_node_matcher :using_t_belongs_to?, <<-MATCHER
+          (send (lvar :t) :belongs_to ...) 
+        MATCHER
+
         def on_send(node)
-          return if !using_add_reference?(node)
+          return if [
+            using_add_reference?(node),
+            using_add_belongs_to?(node),
+            using_t_references?(node),
+            using_t_belongs_to?(node)
+          ].none?
           add_offense(node, message: MSG)
         end
       end

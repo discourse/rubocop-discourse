@@ -10,7 +10,7 @@ Discourse/NoTimeNewWithoutArgs:
 Discourse/NoURIEscapeEncode:
   Enabled: true
 
-Discourse/NoAddReferenceActiveRecordMigration:
+Discourse/NoAddReferenceOrAliasesActiveRecordMigration:
   Enabled: true
 
 Discourse/NoNokogiriHtmlFragment:
