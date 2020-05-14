@@ -48,4 +48,3 @@ describe RuboCop::Cop::Discourse::NoAddReferenceOrAliasesActiveRecordMigration, 
     expect(cop.offenses.first.message).to eq(described_class::MSG)
   end
 end
-
