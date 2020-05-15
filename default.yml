@@ -12,7 +12,7 @@ AllCops:
     - "db/schema.rb"
     - "bundle/**/*"
     - "vendor/**/*"
-    - "node_modules/**/*"
+    - "**/node_modules/**/*"
     - "public/**/*"
     - "plugins/**/gems/**/*"
 
