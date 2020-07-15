@@ -44,3 +44,9 @@ Discourse/NoJsonParseResponse:
   Patterns:
   - _spec.rb
   - "(?:^|/)spec/"
+
+Discourse/NoMockingJobs:
+  Enabled: true
+  Patterns:
+  - _spec.rb
+  - "(?:^|/)spec/"
