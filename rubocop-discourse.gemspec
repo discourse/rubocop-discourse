@@ -5,8 +5,10 @@ Gem::Specification.new do |s|
   s.version     = "2.3.1"
   s.summary     = "Custom rubocop cops used by Discourse"
   s.authors     = ["David Taylor"]
-  s.files       = `git ls-files`.split($/)
-  s.license       = "MIT"
+  s.license     = "MIT"
+  s.homepage    = "https://github.com/discourse/rubocop-discourse"
+  
+  s.files = `git ls-files`.split($/)
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency "rubocop", ">= 0.69.0"
