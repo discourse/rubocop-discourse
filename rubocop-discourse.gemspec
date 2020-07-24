@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.authors     = ["David Taylor"]
   s.license     = "MIT"
   s.homepage    = "https://github.com/discourse/rubocop-discourse"
-  
+
   s.files = `git ls-files`.split($/)
   s.require_paths = ["lib"]
 
