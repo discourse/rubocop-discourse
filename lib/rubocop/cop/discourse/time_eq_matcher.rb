@@ -3,7 +3,7 @@
 module RuboCop
   module Cop
     module Discourse
-      # Use `time_eq` matcher with timestamps in specs.
+      # Use `eq_time` matcher with timestamps in specs.
       #
       # @example
       #   # bad
@@ -12,7 +12,7 @@ module RuboCop
       #   # good
       #   expect(user.created_at).to eq_time(Time.zone.now)
       class TimeEqMatcher < Cop
-        MSG = "Use time_eq when testing timestamps"
+        MSG = "Use eq_time when testing timestamps"
 
         def_node_matcher :using_eq_matcher_with_timestamp?, <<-MATCHER
           (send
