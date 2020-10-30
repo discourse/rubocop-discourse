@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "rubocop-discourse"
-  s.version     = "2.3.2"
+  s.version     = "2.4.0"
   s.summary     = "Custom rubocop cops used by Discourse"
   s.authors     = ["David Taylor"]
   s.license     = "MIT"
