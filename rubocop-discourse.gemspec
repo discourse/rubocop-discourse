@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "rubocop-discourse"
-  s.version     = "2.3.2"
+  s.version     = "2.4.0"
   s.summary     = "Custom rubocop cops used by Discourse"
   s.authors     = ["David Taylor"]
   s.license     = "MIT"
@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split($/)
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency "rubocop", ">= 0.69.0"
-  s.add_runtime_dependency "rubocop-rspec", ">= 1.39.0"
+  s.add_runtime_dependency "rubocop", ">= 1.1.0"
+  s.add_runtime_dependency "rubocop-rspec", ">= 2.0.0.pre"
 
   s.add_development_dependency "rake", "~> 13.0"
   s.add_development_dependency "rspec"
