@@ -11,8 +11,8 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split($/)
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency "rubocop", ">= 0.69.0"
-  s.add_runtime_dependency "rubocop-rspec", ">= 1.39.0"
+  s.add_runtime_dependency "rubocop", ">= 1.1.0"
+  s.add_runtime_dependency "rubocop-rspec", ">= 2.0.0.pre"
 
   s.add_development_dependency "rake", "~> 13.0"
   s.add_development_dependency "rspec"

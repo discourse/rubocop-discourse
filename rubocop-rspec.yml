@@ -192,20 +192,20 @@ RSpec/VoidExpect:
 RSpec/Yield:
   Enabled: true
 
-Capybara/CurrentPathExpectation:
+RSpec/Capybara/CurrentPathExpectation:
   Enabled: true
 
-Capybara/FeatureMethods:
+RSpec/Capybara/FeatureMethods:
   Enabled: true
 
-FactoryBot/AttributeDefinedStatically:
+RSpec/FactoryBot/AttributeDefinedStatically:
   Enabled: true
 
-FactoryBot/CreateList:
+RSpec/FactoryBot/CreateList:
   Enabled: true
 
-FactoryBot/FactoryClassName:
+RSpec/FactoryBot/FactoryClassName:
   Enabled: true
 
-Rails/HttpStatus:
+RSpec/Rails/HttpStatus:
   Enabled: true
