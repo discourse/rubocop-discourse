@@ -99,9 +99,6 @@ RSpec/InstanceSpy:
 RSpec/InstanceVariable:
   Enabled: false # TODO
 
-RSpec/InvalidPredicateMatcher:
-  Enabled: true
-
 RSpec/ItBehavesLike:
   Enabled: true
 
