@@ -15,6 +15,7 @@ AllCops:
     - "**/node_modules/**/*"
     - "public/**/*"
     - "plugins/**/gems/**/*"
+    - "plugins/**/vendor/**/*"
 
 Discourse:
   Enabled: true
