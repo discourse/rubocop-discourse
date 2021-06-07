@@ -28,7 +28,7 @@ jobs:
 
       - name: Rubocop
         run: bundle exec rubocop
-      
+
       - name: Rspec
         run: bundle exec rspec spec
 
@@ -41,6 +41,6 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Release Gem
-        uses: CvX/publish-rubygems-action@master
+        uses: discourse/publish-rubygems-action@main
         env:
           RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}
