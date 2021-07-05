@@ -50,3 +50,15 @@ Discourse/NoMockingJobs:
   Patterns:
   - _spec.rb
   - "(?:^|/)spec/"
+
+Discourse/OnlyTopLevelMultisiteSpecs:
+  Enabled: true
+  Patterns:
+  - _spec.rb
+  - "(?:^|/)spec/"
+
+Discourse/NoMixingMultisiteAndStandardSpecs:
+  Enabled: true
+  Patterns:
+  - _spec.rb
+  - "(?:^|/)spec/"
