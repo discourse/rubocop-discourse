@@ -10,6 +10,9 @@ RSpec/AroundBlock:
 RSpec/BeforeAfterAll:
   Enabled: true
 
+RSpec/ChangeByZero:
+  Enabled: true
+
 RSpec/ContextMethod:
   Enabled: false # TODO
 
