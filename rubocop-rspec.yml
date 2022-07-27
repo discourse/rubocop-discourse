@@ -14,7 +14,7 @@ RSpec/ChangeByZero:
   Enabled: true
 
 RSpec/ContextMethod:
-  Enabled: false # TODO
+  Enabled: true
 
 RSpec/ContextWording:
   Enabled: false # To be decided
