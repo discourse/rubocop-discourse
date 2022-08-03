@@ -17,7 +17,16 @@ RSpec/ContextMethod:
   Enabled: true
 
 RSpec/ContextWording:
-  Enabled: false # To be decided
+  Enabled: true
+  Prefixes:
+    - when
+    - with
+    - without
+    - for
+    - while
+    - if
+    - as
+    - after
 
 RSpec/DescribeClass:
   Enabled: false # To be decided
