@@ -1,6 +1,6 @@
 inherit_from:
   - ./stree-compat.yml
-  - ./.rubocop-layout.yml
+  - ./rubocop-layout.yml
 
 Layout/LineLength:
   Enabled: false
