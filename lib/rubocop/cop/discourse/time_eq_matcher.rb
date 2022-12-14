@@ -37,7 +37,7 @@ module RuboCop
         private
 
         def timestamp_suffix?(property)
-          property =~ /_at$/
+          property.is_a?(Symbol) && property =~ /_at$/
         end
 
         def not_nil?(expression)
