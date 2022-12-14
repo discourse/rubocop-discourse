@@ -4,25 +4,20 @@ on:
   pull_request:
   push:
     branches:
-      - master
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: Setup ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6
-
-      - name: Setup bundler
-        run: gem install bundler
-
-      - name: Setup gems
-        run: bundle install
+          ruby-version: '2.6'
+          bundler-cache: true
 
       - name: Rubocop
         run: bundle exec rubocop
@@ -31,12 +26,12 @@ jobs:
         run: bundle exec rspec spec
 
   publish:
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Release Gem
         uses: discourse/publish-rubygems-action@v2
