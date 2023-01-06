@@ -50,10 +50,3 @@ Lint/ShadowingOuterLocalVariable:
 
 Bundler/OrderedGems:
   Enabled: false
-
-# Enable Layout/LineLength because certain cops that most projects use
-# (e.g. Style/IfUnlessModifier) require Layout/LineLength to be enabled.
-# By leaving it disabled, those rules will mis-fire.
-Layout/LineLength:
-  Enabled: true
-  Max: 240
