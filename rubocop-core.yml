@@ -38,6 +38,18 @@ Style/GlobalVars:
     - 'spec/**/*.rb'
     - 'plugins/*/spec/**/*'
 
+Style/InvertibleUnlessCondition:
+  Enabled: true
+
+Style/NegatedUnless:
+  Enabled: true
+
+Style/UnlessElse:
+  Enabled: true
+
+Style/UnlessLogicalOperators:
+  Enabled: true
+
 Lint/Debugger:
   Enabled: true
 
