@@ -6,16 +6,16 @@ inherit_from:
   - ./rubocop-rspec.yml
 
 AllCops:
-  TargetRubyVersion: 2.6
+  TargetRubyVersion: 3.2
   DisabledByDefault: true
   Exclude:
-    - "db/schema.rb"
-    - "bundle/**/*"
-    - "vendor/**/*"
-    - "**/node_modules/**/*"
-    - "public/**/*"
-    - "plugins/**/gems/**/*"
-    - "plugins/**/vendor/**/*"
+    - 'db/schema.rb'
+    - 'bundle/**/*'
+    - 'vendor/**/*'
+    - '**/node_modules/**/*'
+    - 'public/**/*'
+    - 'plugins/**/gems/**/*'
+    - 'plugins/**/vendor/**/*'
 
 Discourse:
   Enabled: true

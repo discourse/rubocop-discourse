@@ -31,17 +31,17 @@ RSpec/ContextWording:
 RSpec/DescribeClass:
   Enabled: true
   Exclude:
-    - "**/spec/features/**/*"
-    - "**/spec/requests/**/*"
-    - "**/spec/routing/**/*"
-    - "**/spec/system/**/*"
-    - "**/spec/views/**/*"
-    - "**/spec/initializers/**/*"
-    - "**/spec/integration/**/*"
-    - "**/spec/integrity/**/*"
-    - "**/spec/tasks/**/*"
-    - "**/spec/lib/freedom_patches/**/*"
-    - "**/spec/multisite/**/*"
+    - '**/spec/features/**/*'
+    - '**/spec/requests/**/*'
+    - '**/spec/routing/**/*'
+    - '**/spec/system/**/*'
+    - '**/spec/views/**/*'
+    - '**/spec/initializers/**/*'
+    - '**/spec/integration/**/*'
+    - '**/spec/integrity/**/*'
+    - '**/spec/tasks/**/*'
+    - '**/spec/lib/freedom_patches/**/*'
+    - '**/spec/multisite/**/*'
 
 RSpec/DescribeMethod:
   Enabled: true
@@ -213,7 +213,7 @@ RSpec/VoidExpect:
 RSpec/Yield:
   Enabled: true
 
-RSpec/Capybara/CurrentPathExpectation:
+Capybara/CurrentPathExpectation:
   Enabled: true
 
 RSpec/Capybara/FeatureMethods:
