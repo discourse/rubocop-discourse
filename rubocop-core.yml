@@ -4,6 +4,9 @@ Security:
 Security/IoMethods:
   Enabled: true
 
+Security/CompoundHash:
+  Enabled: true
+
 # Prefer &&/|| over and/or.
 Style/AndOr:
   Enabled: true
@@ -14,6 +17,7 @@ Style/FrozenStringLiteralComment:
 # Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
 Style/HashSyntax:
   Enabled: true
+  EnforcedShorthandSyntax: either
 
 # Defining a method with parameters needs parentheses.
 Style/MethodDefParentheses:
