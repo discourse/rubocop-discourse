@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe RuboCop::Cop::Discourse::NoAddReferenceOrAliasesActiveRecordMigration, :config do
+describe RuboCop::Cop::Discourse::NoAddReferenceOrAliasesActiveRecordMigration,
+         :config do
   subject(:cop) { described_class.new(config) }
-  let(:config) do
-    RuboCop::Config.new
-  end
+  let(:config) { RuboCop::Config.new }
 
   it "raises an offense if add_reference is used, with or without arguments" do
     inspect_source(<<~RUBY)
