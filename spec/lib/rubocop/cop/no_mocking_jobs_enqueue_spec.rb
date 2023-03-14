@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe RuboCop::Cop::Discourse::NoMockingJobs, :config do
   subject(:cop) { described_class.new(config) }
 
-  let(:config) do
-    RuboCop::Config.new
-  end
+  let(:config) { RuboCop::Config.new }
 
   it "raises an offense if Jobs is mocked with :enqueue" do
     inspect_source(<<~RUBY)

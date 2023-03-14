@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
-describe RuboCop::Cop::Discourse::NoResetColumnInformationInMigrations, :config do
+describe RuboCop::Cop::Discourse::NoResetColumnInformationInMigrations,
+         :config do
   subject(:cop) { described_class.new(config) }
 
-  let(:config) do
-    RuboCop::Config.new
-  end
+  let(:config) { RuboCop::Config.new }
 
   it "raises an offense if reset_column_information is used" do
     inspect_source(<<~RUBY)

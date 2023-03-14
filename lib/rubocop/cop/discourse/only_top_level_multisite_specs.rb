@@ -47,11 +47,7 @@ module RuboCop
         MATCHER
 
         def top_level?(node)
-          if node.parent&.begin_type?
-            node.parent.root?
-          else
-            node.root?
-          end
+          node.parent&.begin_type? ? node.parent.root? : node.root?
         end
       end
     end

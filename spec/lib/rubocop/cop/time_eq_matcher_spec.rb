@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require "spec_helper"
 
 describe RuboCop::Cop::Discourse::TimeEqMatcher, :config do
   subject(:cop) { described_class.new(config) }
 
-  let(:config) do
-    RuboCop::Config.new
-  end
+  let(:config) { RuboCop::Config.new }
 
   it "raises an offense if a timestamp is compared using `eq`" do
     inspect_source(<<~RUBY)

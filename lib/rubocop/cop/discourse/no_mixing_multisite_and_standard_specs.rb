@@ -24,7 +24,8 @@ module RuboCop
       #   describe "x", type: :multisite do
       #   end
       class NoMixingMultisiteAndStandardSpecs < Cop
-        MSG = "Do not mix multisite and standard specs. Consider moving multisite describes to a separate file."
+        MSG =
+          "Do not mix multisite and standard specs. Consider moving multisite describes to a separate file."
 
         def initialize(config = nil, options = nil)
           super
@@ -64,11 +65,7 @@ module RuboCop
         MATCHER
 
         def top_level?(node)
-          if node.parent&.begin_type?
-            node.parent.root?
-          else
-            node.root?
-          end
+          node.parent&.begin_type? ? node.parent.root? : node.root?
         end
       end
     end

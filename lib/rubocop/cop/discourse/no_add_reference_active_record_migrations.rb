@@ -70,12 +70,14 @@ module RuboCop
         MATCHER
 
         def on_send(node)
-          return if [
-            using_add_reference?(node),
-            using_add_belongs_to?(node),
-            using_t_references?(node),
-            using_t_belongs_to?(node)
-          ].none?
+          if [
+               using_add_reference?(node),
+               using_add_belongs_to?(node),
+               using_t_references?(node),
+               using_t_belongs_to?(node)
+             ].none?
+            return
+          end
           add_offense(node, message: MSG)
         end
       end
