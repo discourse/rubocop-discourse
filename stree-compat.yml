@@ -3,6 +3,8 @@ require:
 
 inherit_from:
   - ./rubocop-core.yml
+  - ./rubocop-capybara.yml
+  - ./rubocop-factory_bot.yml
   - ./rubocop-rspec.yml
 
 AllCops:
