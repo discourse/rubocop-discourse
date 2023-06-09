@@ -9,6 +9,7 @@ inherit_from:
 
 AllCops:
   TargetRubyVersion: 3.2
+  SuggestExtensions: false
   DisabledByDefault: true
   Exclude:
     - 'db/schema.rb'
