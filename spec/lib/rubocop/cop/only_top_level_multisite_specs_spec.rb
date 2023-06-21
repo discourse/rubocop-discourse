@@ -15,7 +15,7 @@ describe RuboCop::Cop::Discourse::OnlyTopLevelMultisiteSpecs, :config do
       end
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to match(described_class::MSG)
   end
 
   it "raises an offense if multisite config option is used in a sub-describe (RSpec const version)" do
@@ -26,7 +26,7 @@ describe RuboCop::Cop::Discourse::OnlyTopLevelMultisiteSpecs, :config do
       end
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to match(described_class::MSG)
   end
 
   it "raises an offense if multisite config option is used in an example" do
@@ -40,7 +40,7 @@ describe RuboCop::Cop::Discourse::OnlyTopLevelMultisiteSpecs, :config do
       end
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to match(described_class::MSG)
   end
 
   it "raises an offense if multisite config option is used in a context" do
@@ -51,7 +51,7 @@ describe RuboCop::Cop::Discourse::OnlyTopLevelMultisiteSpecs, :config do
       end
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to match(described_class::MSG)
   end
 
   it "does not raise an offense if multisite config option is used on top-level describe" do

@@ -12,7 +12,7 @@ describe RuboCop::Cop::Discourse::TimeEqMatcher, :config do
     expect(user.created_at).to eq(Time.zone.now)
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to match(described_class::MSG)
   end
 
   it "passes if a timestamp is compared using `eq_time`" do

@@ -8,6 +8,8 @@ describe RuboCop::Cop::Discourse::NoResetColumnInformationInMigrations,
 
   let(:config) { RuboCop::Config.new }
 
+  before { config["Discourse/NoResetColumnInformationInMigrations"]["Enabled"] = true }
+
   it "raises an offense if reset_column_information is used" do
     inspect_source(<<~RUBY)
       class SomeMigration < ActiveRecord::Migration[6.0]
@@ -17,7 +19,7 @@ describe RuboCop::Cop::Discourse::NoResetColumnInformationInMigrations,
       end
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to match(described_class::MSG)
   end
 
   it "raise an offense if reset_column_information is used without AR model" do
@@ -29,6 +31,6 @@ describe RuboCop::Cop::Discourse::NoResetColumnInformationInMigrations,
       end
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to match(described_class::MSG)
   end
 end

@@ -73,7 +73,7 @@ RSpec/EmptyLineAfterHook:
   Enabled: false # TODO
 
 RSpec/EmptyLineAfterSubject:
-  Enabled: false # TODO
+  Enabled: true
 
 RSpec/ExampleLength:
   Enabled: false # To be decided
@@ -130,7 +130,7 @@ RSpec/IteratedExpectation:
   Enabled: false # To be decided
 
 RSpec/LeadingSubject:
-  Enabled: false # TODO
+  Enabled: true
 
 RSpec/LeakyConstantDeclaration:
   Enabled: false # To be decided
@@ -157,7 +157,7 @@ RSpec/MultipleSubjects:
   Enabled: true
 
 RSpec/NamedSubject:
-  Enabled: false # To be decided
+  Enabled: true
 
 RSpec/NestedGroups:
   Enabled: false # To be decided
