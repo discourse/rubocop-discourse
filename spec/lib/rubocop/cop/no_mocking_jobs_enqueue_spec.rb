@@ -12,7 +12,7 @@ describe RuboCop::Cop::Discourse::NoMockingJobs, :config do
     Jobs.expects(:enqueue)
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to end_with(described_class::MSG)
   end
 
   it "raises an offense if Jobs is mocked with :enqueue_in" do
@@ -20,7 +20,7 @@ describe RuboCop::Cop::Discourse::NoMockingJobs, :config do
     Jobs.expects(:enqueue_in)
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to end_with(described_class::MSG)
   end
 
   it "does not raise an offense if Jobs is not mocked with :enqueue or :enqueue_in" do

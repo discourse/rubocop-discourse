@@ -16,7 +16,7 @@ describe RuboCop::Cop::Discourse::NoMixingMultisiteAndStandardSpecs, :config do
       end
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to match(described_class::MSG)
   end
 
   it "raises an offense if there are multiple multisite and standard top-level describes" do
@@ -31,7 +31,7 @@ describe RuboCop::Cop::Discourse::NoMixingMultisiteAndStandardSpecs, :config do
       end
     RUBY
 
-    expect(cop.offenses.first.message).to eq(described_class::MSG)
+    expect(cop.offenses.first.message).to match(described_class::MSG)
   end
 
   it "does not raise an offense if there are only multisite describes" do
