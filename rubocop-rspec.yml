@@ -219,13 +219,13 @@ Capybara/CurrentPathExpectation:
 RSpec/Capybara/FeatureMethods:
   Enabled: true
 
-RSpec/FactoryBot/AttributeDefinedStatically:
+FactoryBot/AttributeDefinedStatically:
   Enabled: true
 
-RSpec/FactoryBot/CreateList:
+FactoryBot/CreateList:
   Enabled: true
 
-RSpec/FactoryBot/FactoryClassName:
+FactoryBot/FactoryClassName:
   Enabled: true
 
 RSpec/Rails/HttpStatus:
