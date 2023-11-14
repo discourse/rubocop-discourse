@@ -27,6 +27,7 @@ RSpec/ContextWording:
     - if
     - as
     - after
+    - in
 
 RSpec/DescribeClass:
   Enabled: true
