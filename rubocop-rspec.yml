@@ -54,12 +54,12 @@ RSpec/DescribedClass:
   Enabled: false # To be decided
 
 RSpec/DescribedClassModuleWrapping:
-  Enabled: false # To be decided
+  Enabled: true
 
 RSpec/EmptyExampleGroup:
   Enabled: true
   Exclude:
-    - 'spec/requests/api/*'
+    - "spec/requests/api/*"
 
 RSpec/EmptyLineAfterExample:
   Enabled: false # TODO
@@ -92,7 +92,7 @@ RSpec/ExpectChange:
   Enabled: false # To be decided
 
 RSpec/ExpectInHook:
-  Enabled: false # To be decided
+  Enabled: true
 
 RSpec/ExpectOutput:
   Enabled: true
@@ -101,7 +101,7 @@ RSpec/SpecFilePathFormat:
   Enabled: false # To be decided
 
 RSpec/SpecFilePathSuffix:
-  Enabled: false # To be decided
+  Enabled: true
 
 RSpec/Focus:
   Enabled: true
@@ -176,16 +176,16 @@ RSpec/ReceiveNever:
   Enabled: true
 
 RSpec/RepeatedDescription:
-  Enabled: false # TODO
+  Enabled: true
 
 RSpec/RepeatedExample:
-  Enabled: false # TODO
+  Enabled: true
 
 RSpec/RepeatedExampleGroupBody:
-  Enabled: false # TODO
+  Enabled: true
 
 RSpec/RepeatedExampleGroupDescription:
-  Enabled: false # TODO
+  Enabled: true
 
 RSpec/ReturnFromStub:
   Enabled: true
