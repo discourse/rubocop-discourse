@@ -7,11 +7,14 @@ RSpec/AnyInstance:
 RSpec/AroundBlock:
   Enabled: true
 
+RSpec/BeEq:
+  Enabled: false
+
 RSpec/BeforeAfterAll:
   Enabled: true
 
 RSpec/ChangeByZero:
-  Enabled: true
+  Enabled: false
 
 RSpec/ContextMethod:
   Enabled: true
@@ -32,17 +35,17 @@ RSpec/ContextWording:
 RSpec/DescribeClass:
   Enabled: true
   Exclude:
-    - '**/spec/features/**/*'
-    - '**/spec/requests/**/*'
-    - '**/spec/routing/**/*'
-    - '**/spec/system/**/*'
-    - '**/spec/views/**/*'
-    - '**/spec/initializers/**/*'
-    - '**/spec/integration/**/*'
-    - '**/spec/integrity/**/*'
-    - '**/spec/tasks/**/*'
-    - '**/spec/lib/freedom_patches/**/*'
-    - '**/spec/multisite/**/*'
+    - "**/spec/features/**/*"
+    - "**/spec/requests/**/*"
+    - "**/spec/routing/**/*"
+    - "**/spec/system/**/*"
+    - "**/spec/views/**/*"
+    - "**/spec/initializers/**/*"
+    - "**/spec/integration/**/*"
+    - "**/spec/integrity/**/*"
+    - "**/spec/tasks/**/*"
+    - "**/spec/lib/freedom_patches/**/*"
+    - "**/spec/multisite/**/*"
 
 RSpec/DescribeMethod:
   Enabled: true
@@ -92,7 +95,7 @@ RSpec/ExpectChange:
   Enabled: false # To be decided
 
 RSpec/ExpectInHook:
-  Enabled: true
+  Enabled: false
 
 RSpec/ExpectOutput:
   Enabled: true
@@ -154,8 +157,14 @@ RSpec/MessageSpies:
 RSpec/MissingExampleGroupArgument:
   Enabled: true
 
+RSpec/MultipleExpectations:
+  Enabled: false
+
 RSpec/MultipleDescribes:
   Enabled: false # TODO
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
 
 RSpec/MultipleSubjects:
   Enabled: true
@@ -176,16 +185,16 @@ RSpec/ReceiveNever:
   Enabled: true
 
 RSpec/RepeatedDescription:
-  Enabled: true
+  Enabled: false
 
 RSpec/RepeatedExample:
-  Enabled: true
+  Enabled: false # TODO
 
 RSpec/RepeatedExampleGroupBody:
-  Enabled: true
+  Enabled: false # TODO
 
 RSpec/RepeatedExampleGroupDescription:
-  Enabled: true
+  Enabled: false
 
 RSpec/ReturnFromStub:
   Enabled: true
@@ -221,6 +230,9 @@ Capybara/CurrentPathExpectation:
   Enabled: true
 
 RSpec/Capybara/FeatureMethods:
+  Enabled: true
+
+Capybara/VisibilityMatcher:
   Enabled: true
 
 FactoryBot/AttributeDefinedStatically:
