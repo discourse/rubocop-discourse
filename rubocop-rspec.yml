@@ -14,7 +14,7 @@ RSpec/BeforeAfterAll:
   Enabled: true
 
 RSpec/ChangeByZero:
-  Enabled: false
+  Enabled: true
 
 RSpec/ContextMethod:
   Enabled: true
