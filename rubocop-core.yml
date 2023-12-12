@@ -37,10 +37,10 @@ Style/GlobalVars:
   Enabled: true
   Severity: warning
   Exclude:
-    - 'lib/tasks/**/*'
-    - 'script/**/*'
-    - 'spec/**/*.rb'
-    - 'plugins/*/spec/**/*'
+    - "lib/tasks/**/*"
+    - "script/**/*"
+    - "spec/**/*.rb"
+    - "plugins/*/spec/**/*"
 
 Style/InvertibleUnlessCondition:
   Enabled: true
@@ -69,3 +69,72 @@ Bundler/OrderedGems:
 
 Layout/LineLength:
   Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: true
+
+Lint/DuplicateMethods:
+  Enabled: true
+
+Lint/RedundantWithIndex:
+  Enabled: true
+
+Lint/RedundantRequireStatement:
+  Enabled: true
+
+Lint/LiteralInInterpolation:
+  Enabled: true
+
+Lint/RedundantStringCoercion:
+  Enabled: true
+
+Lint/BooleanSymbol:
+  Enabled: true
+
+Lint/ShadowedArgument:
+  Enabled: true
+
+Lint/RedundantCopDisableDirective:
+  Enabled: true
+
+Lint/EmptyEnsure:
+  Enabled: true
+
+Lint/RedundantWithObject:
+  Enabled: true
+
+Lint/SelfAssignment:
+  Enabled: true
+
+Lint/Void:
+  Enabled: true
+
+Lint/UselessMethodDefinition:
+  Enabled: true
+
+Lint/UnreachableCode:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/DisjunctiveAssignmentInConstructor:
+  Enabled: true
+
+Lint/NonLocalExitFromIterator:
+  Enabled: true
+
+Lint/DeprecatedClassMethods:
+  Enabled: true
+
+Lint/SafeNavigationChain:
+  Enabled: true
+
+Lint/RedundantSafeNavigation:
+  Enabled: true
+
+Lint/EmptyConditionalBody:
+  Enabled: true
+
+Lint/SafeNavigationConsistency:
+  Enabled: true

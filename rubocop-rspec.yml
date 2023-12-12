@@ -32,17 +32,17 @@ RSpec/ContextWording:
 RSpec/DescribeClass:
   Enabled: true
   Exclude:
-    - '**/spec/features/**/*'
-    - '**/spec/requests/**/*'
-    - '**/spec/routing/**/*'
-    - '**/spec/system/**/*'
-    - '**/spec/views/**/*'
-    - '**/spec/initializers/**/*'
-    - '**/spec/integration/**/*'
-    - '**/spec/integrity/**/*'
-    - '**/spec/tasks/**/*'
-    - '**/spec/lib/freedom_patches/**/*'
-    - '**/spec/multisite/**/*'
+    - "**/spec/features/**/*"
+    - "**/spec/requests/**/*"
+    - "**/spec/routing/**/*"
+    - "**/spec/system/**/*"
+    - "**/spec/views/**/*"
+    - "**/spec/initializers/**/*"
+    - "**/spec/integration/**/*"
+    - "**/spec/integrity/**/*"
+    - "**/spec/tasks/**/*"
+    - "**/spec/lib/freedom_patches/**/*"
+    - "**/spec/multisite/**/*"
 
 RSpec/DescribeMethod:
   Enabled: true
@@ -54,12 +54,12 @@ RSpec/DescribedClass:
   Enabled: false # To be decided
 
 RSpec/DescribedClassModuleWrapping:
-  Enabled: false # To be decided
+  Enabled: true
 
 RSpec/EmptyExampleGroup:
   Enabled: true
   Exclude:
-    - 'spec/requests/api/*'
+    - "spec/requests/api/*"
 
 RSpec/EmptyLineAfterExample:
   Enabled: false # TODO
@@ -92,7 +92,7 @@ RSpec/ExpectChange:
   Enabled: false # To be decided
 
 RSpec/ExpectInHook:
-  Enabled: false # To be decided
+  Enabled: false
 
 RSpec/ExpectOutput:
   Enabled: true
@@ -101,7 +101,7 @@ RSpec/SpecFilePathFormat:
   Enabled: false # To be decided
 
 RSpec/SpecFilePathSuffix:
-  Enabled: false # To be decided
+  Enabled: true
 
 RSpec/Focus:
   Enabled: true
@@ -154,8 +154,14 @@ RSpec/MessageSpies:
 RSpec/MissingExampleGroupArgument:
   Enabled: true
 
+RSpec/MultipleExpectations:
+  Enabled: false
+
 RSpec/MultipleDescribes:
   Enabled: false # TODO
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
 
 RSpec/MultipleSubjects:
   Enabled: true
@@ -176,7 +182,7 @@ RSpec/ReceiveNever:
   Enabled: true
 
 RSpec/RepeatedDescription:
-  Enabled: false # TODO
+  Enabled: false
 
 RSpec/RepeatedExample:
   Enabled: false # TODO
@@ -185,7 +191,7 @@ RSpec/RepeatedExampleGroupBody:
   Enabled: false # TODO
 
 RSpec/RepeatedExampleGroupDescription:
-  Enabled: false # TODO
+  Enabled: false
 
 RSpec/ReturnFromStub:
   Enabled: true
@@ -221,6 +227,9 @@ Capybara/CurrentPathExpectation:
   Enabled: true
 
 RSpec/Capybara/FeatureMethods:
+  Enabled: true
+
+Capybara/VisibilityMatcher:
   Enabled: true
 
 FactoryBot/AttributeDefinedStatically:
