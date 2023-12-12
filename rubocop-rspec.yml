@@ -7,9 +7,6 @@ RSpec/AnyInstance:
 RSpec/AroundBlock:
   Enabled: true
 
-RSpec/BeEq:
-  Enabled: false
-
 RSpec/BeforeAfterAll:
   Enabled: true
 
