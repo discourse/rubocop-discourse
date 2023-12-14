@@ -90,6 +90,7 @@ Lint/RedundantStringCoercion:
 
 Lint/BooleanSymbol:
   Enabled: true
+  AutoCorrect: false # it breaks the code
 
 Lint/ShadowedArgument:
   Enabled: true
