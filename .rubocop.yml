@@ -1,2 +1,9 @@
 inherit_from:
   - default.yml
+
+AllCops:
+  inherit_mode:
+    merge:
+      - Exclude
+  Exclude:
+    - "**/spec/fixtures/**/*"

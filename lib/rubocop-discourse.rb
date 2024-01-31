@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require "rubocop"
+require "active_support"
+require "active_support/core_ext/string/inflections"
 require_relative "rubocop/discourse"
 require_relative "rubocop/discourse/inject"
 
