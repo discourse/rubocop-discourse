@@ -62,3 +62,31 @@ Discourse/NoMixingMultisiteAndStandardSpecs:
   Patterns:
     - _spec.rb
     - '(?:^|/)spec/'
+
+Discourse/Plugins/CallRequiresPlugin:
+  Enabled: true
+  Include:
+    - 'app/controllers/**/*'
+
+Discourse/Plugins/UsePluginInstanceOn:
+  Enabled: true
+
+Discourse/Plugins/NamespaceMethods:
+  Enabled: true
+  Exclude:
+    - '**/spec/**/*'
+    - '**/tasks/**/*.rake'
+    - '**/db/fixtures/**/*'
+
+Discourse/Plugins/NamespaceConstants:
+  Enabled: true
+  Exclude:
+    - '**/spec/**/*'
+    - '**/tasks/**/*.rake'
+    - '**/db/fixtures/**/*'
+
+Discourse/Plugins/UseRequireRelative:
+  Enabled: true
+
+Discourse/Plugins/NoMonkeyPatching:
+  Enabled: true
