@@ -136,6 +136,7 @@ Lint/RedundantSafeNavigation:
 
 Lint/EmptyConditionalBody:
   Enabled: true
+  AutoCorrect: false # it can break the code
 
 Lint/SafeNavigationConsistency:
   Enabled: true
