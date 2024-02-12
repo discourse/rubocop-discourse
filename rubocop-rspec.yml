@@ -223,22 +223,7 @@ RSpec/VoidExpect:
 RSpec/Yield:
   Enabled: true
 
-Capybara/CurrentPathExpectation:
-  Enabled: true
-
 RSpec/Capybara/FeatureMethods:
-  Enabled: true
-
-Capybara/VisibilityMatcher:
-  Enabled: true
-
-FactoryBot/AttributeDefinedStatically:
-  Enabled: true
-
-FactoryBot/CreateList:
-  Enabled: true
-
-FactoryBot/FactoryClassName:
   Enabled: true
 
 RSpec/Rails/HttpStatus:

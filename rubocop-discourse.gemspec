@@ -13,6 +13,8 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency "rubocop", ">= 1.59.0"
   s.add_runtime_dependency "rubocop-rspec", ">= 2.25.0"
+  s.add_runtime_dependency "rubocop-factory_bot", ">= 2.0.0"
+  s.add_runtime_dependency "rubocop-capybara", ">= 2.0.0"
 
   s.add_development_dependency "rake", "~> 13.1.0"
   s.add_development_dependency "rspec", "~> 3.12.0"
