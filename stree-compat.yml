@@ -22,3 +22,8 @@ AllCops:
 
 Discourse:
   Enabled: true
+
+Discourse/FabricatorShorthand:
+  Enabled: true
+  Include:
+    - 'spec/**/*_spec.rb'
