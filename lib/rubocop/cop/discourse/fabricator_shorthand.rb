@@ -26,9 +26,12 @@ module RuboCop
       # # good
       # fab!(:another_user) { Fabricate(:user) }
       class FabricatorShorthand < Base
+        extend AutoCorrector
+        include IgnoredNode
+
         def_node_matcher :offending_fabricator?, <<-MATCHER
           (block
-            (send nil? :fab!
+            $(send nil? :fab!
               (sym $_identifier))
             (args)
             (send nil? :Fabricate
@@ -36,15 +39,22 @@ module RuboCop
         MATCHER
 
         def on_block(node)
-          offending_fabricator?(node) do |identifier|
-            add_offense(node, message: message(identifier))
+          offending_fabricator?(node) do |expression, _identifier|
+            add_offense(
+              node,
+              message: message(expression.source)
+            ) do |corrector|
+              next if part_of_ignored_node?(node)
+              corrector.replace(node, expression.source)
+            end
+            ignore_node(node)
           end
         end
 
         private
 
-        def message(identifier)
-          "Use the fabricator shorthand: `fab!(:#{identifier})`"
+        def message(expression)
+          "Use the fabricator shorthand: `#{expression}`"
         end
       end
     end

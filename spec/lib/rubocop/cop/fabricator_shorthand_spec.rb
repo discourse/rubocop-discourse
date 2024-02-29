@@ -31,4 +31,19 @@ describe RuboCop::Cop::Discourse::FabricatorShorthand, :config do
       end
     RUBY
   end
+
+  it "supports autocorrect" do
+    expect_offense(<<~RUBY)
+      RSpec.describe "Foo" do
+        fab!(:foo) { Fabricate(:foo) }
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Discourse/FabricatorShorthand: Use the fabricator shorthand: `fab!(:foo)`
+      end
+    RUBY
+
+    expect_correction(<<~RUBY)
+      RSpec.describe "Foo" do
+        fab!(:foo)
+      end
+    RUBY
+  end
 end
