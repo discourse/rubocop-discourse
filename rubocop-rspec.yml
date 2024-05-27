@@ -226,5 +226,5 @@ RSpec/Yield:
 RSpec/Capybara/FeatureMethods:
   Enabled: true
 
-RSpec/Rails/HttpStatus:
+RSpecRails/HttpStatus:
   Enabled: true

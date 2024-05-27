@@ -6,6 +6,7 @@ inherit_from:
   - ./rubocop-capybara.yml
   - ./rubocop-factory_bot.yml
   - ./rubocop-rspec.yml
+  - ./rubocop-rails.yml
 
 AllCops:
   TargetRubyVersion: 3.2

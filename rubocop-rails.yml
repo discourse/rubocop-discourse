@@ -1,0 +1,11 @@
+require:
+  - rubocop-rails
+
+Rails:
+  Enabled: false
+
+Rails/EnumHash:
+  Enabled: true
+
+Rails/EnumUniqueness:
+  Enabled: true
