@@ -1,5 +1,6 @@
 require:
   - rubocop-rspec
+  - rubocop-rspec_rails
 
 RSpec/AnyInstance:
   Enabled: false # To be decided
@@ -223,8 +224,15 @@ RSpec/VoidExpect:
 RSpec/Yield:
   Enabled: true
 
-RSpec/Capybara/FeatureMethods:
+RSpec/Dialect:
   Enabled: true
+  PreferredMethods:
+    background: :before
+    scenario:   :it
+    xscenario:  :xit
+    given:      :let
+    given!:     :let!
+    feature:    :describe
 
 RSpecRails/HttpStatus:
   Enabled: true
