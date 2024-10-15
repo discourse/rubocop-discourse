@@ -25,7 +25,7 @@ module RuboCop
       #     it "does X" do
       #     end
       #   end
-      class OnlyTopLevelMultisiteSpecs < Cop
+      class OnlyTopLevelMultisiteSpecs < Base
         MSG = "Use `type: :multisite` only on a top-level `describe`"
 
         def on_block(node)

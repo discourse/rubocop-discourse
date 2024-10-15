@@ -16,7 +16,7 @@ module RuboCop
       #   it "works", type: :multisite do
       #     do_something
       #   end
-      class NoDirectMultisiteManipulation < Cop
+      class NoDirectMultisiteManipulation < Base
         MSG =
           "Use `type: :multisite` example setting instead of modifying `Rails.configuration.multisite`."
 

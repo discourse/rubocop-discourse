@@ -15,7 +15,7 @@ module RuboCop
       #   # good
       #   UrlHelper.encode("https://a%20a.com?a='a%22")
       #   Addressable::URI.encode("https://a%20a.com?a='a%22")
-      class NoURIEscapeEncode < Cop
+      class NoURIEscapeEncode < Base
         MSG =
           "URI.escape, URI.encode, URI.unescape, URI.decode are deprecated and should not be used."
 
@@ -40,7 +40,7 @@ module RuboCop
                using_uri_escape?(node),
                using_uri_encode?(node),
                using_uri_unescape?(node),
-               using_uri_decode?(node)
+               using_uri_decode?(node),
              ].none?
             return
           end

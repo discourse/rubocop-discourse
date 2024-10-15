@@ -11,7 +11,7 @@ module RuboCop
       #
       #   # good
       #   now = Time.zone.now
-      class NoTimeNewWithoutArgs < Cop
+      class NoTimeNewWithoutArgs < Base
         MSG = "Use `Time.zone.now` instead of `Time.new` without arguments."
 
         def_node_matcher :time_new_without_args?, <<-MATCHER
@@ -25,9 +25,7 @@ module RuboCop
         end
 
         def autocorrect(node)
-          lambda do |corrector|
-            corrector.replace(node.loc.expression, "Time.zone.now")
-          end
+          lambda { |corrector| corrector.replace(node.loc.expression, "Time.zone.now") }
         end
       end
     end

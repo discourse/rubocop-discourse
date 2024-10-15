@@ -7,7 +7,7 @@ module RuboCop
       # migrations. The method is not thread safe and we run migrations
       # concurrently for multisites. Also, we don't encourage the use of
       # ActiveRecord methods in migrations and prefer to write SQL directly.
-      class NoResetColumnInformationInMigrations < Cop
+      class NoResetColumnInformationInMigrations < Base
         MSG =
           "ActiveRecord::ModelSchema.reset_column_information is not thread-safe " \
             "and we run migrations concurrently on multisite clusters. Using this " \
