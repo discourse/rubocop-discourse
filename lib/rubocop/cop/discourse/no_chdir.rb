@@ -13,7 +13,7 @@ module RuboCop
       # @example
       #   # bad
       #   Dir.chdir("test")
-      class NoChdir < Cop
+      class NoChdir < Base
         MSG = "Chdir is not thread safe."
 
         def_node_matcher :using_dir_chdir?, <<-MATCHER

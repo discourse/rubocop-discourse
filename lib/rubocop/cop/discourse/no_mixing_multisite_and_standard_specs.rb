@@ -23,7 +23,7 @@ module RuboCop
       #   # x_multisite_spec.rb
       #   describe "x", type: :multisite do
       #   end
-      class NoMixingMultisiteAndStandardSpecs < Cop
+      class NoMixingMultisiteAndStandardSpecs < Base
         MSG =
           "Do not mix multisite and standard specs. Consider moving multisite describes to a separate file."
 

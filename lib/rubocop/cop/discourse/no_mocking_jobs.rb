@@ -3,7 +3,7 @@
 module RuboCop
   module Cop
     module Discourse
-      class NoMockingJobs < Cop
+      class NoMockingJobs < Base
         MSG =
           "Use the test helpers provided by Sidekiq instead of mocking `Jobs.expects(:enqueue)`."
 

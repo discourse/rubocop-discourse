@@ -8,18 +8,18 @@ describe RuboCop::Cop::Discourse::TimeEqMatcher, :config do
   let(:config) { RuboCop::Config.new }
 
   it "raises an offense if a timestamp is compared using `eq`" do
-    inspect_source(<<~RUBY)
+    offenses = inspect_source(<<~RUBY)
     expect(user.created_at).to eq(Time.zone.now)
     RUBY
 
-    expect(cop.offenses.first.message).to match(described_class::MSG)
+    expect(offenses.first.message).to match(described_class::MSG)
   end
 
   it "passes if a timestamp is compared using `eq_time`" do
-    inspect_source(<<~RUBY)
+    offenses = inspect_source(<<~RUBY)
       expect(user.created_at).to eq_time(Time.zone.now)
     RUBY
 
-    expect(cop.offenses).to be_empty
+    expect(offenses).to be_empty
   end
 end

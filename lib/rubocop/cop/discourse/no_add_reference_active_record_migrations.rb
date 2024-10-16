@@ -44,7 +44,7 @@ module RuboCop
       #     index_posts_on_image_upload_id ON posts USING btree (image_upload_id)
       #   SQL
       # end
-      class NoAddReferenceOrAliasesActiveRecordMigration < Cop
+      class NoAddReferenceOrAliasesActiveRecordMigration < Base
         MSG = <<~MSG
           AR methods add_reference, add_belongs_to, t.references, and t.belongs_to are
           high-risk for large tables and have too many background magic operations.
@@ -74,7 +74,7 @@ module RuboCop
                using_add_reference?(node),
                using_add_belongs_to?(node),
                using_t_references?(node),
-               using_t_belongs_to?(node)
+               using_t_belongs_to?(node),
              ].none?
             return
           end

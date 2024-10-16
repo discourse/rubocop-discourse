@@ -11,9 +11,8 @@ module RuboCop
       #
       #   # good
       #   expect(response.parsed_body).to eq({})
-      class NoJsonParseResponse < Cop
-        MSG =
-          "Use `response.parsed_body` instead of `JSON.parse(response.body)` in specs."
+      class NoJsonParseResponse < Base
+        MSG = "Use `response.parsed_body` instead of `JSON.parse(response.body)` in specs."
 
         def_node_matcher :json_parse_body?, <<-MATCHER
           (send
@@ -29,9 +28,7 @@ module RuboCop
         end
 
         def autocorrect(node)
-          lambda do |corrector|
-            corrector.replace(node.loc.expression, "response.parsed_body")
-          end
+          lambda { |corrector| corrector.replace(node.loc.expression, "response.parsed_body") }
         end
       end
     end
