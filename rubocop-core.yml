@@ -140,3 +140,6 @@ Lint/EmptyConditionalBody:
 
 Lint/SafeNavigationConsistency:
   Enabled: true
+
+Lint/OrAssignmentToConstant:
+  Enabled: true
