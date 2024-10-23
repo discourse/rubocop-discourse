@@ -9,3 +9,6 @@ Rails/EnumHash:
 
 Rails/EnumUniqueness:
   Enabled: true
+
+Rails/ReversibleMigrationMethodDefinition:
+  Enabled: true
