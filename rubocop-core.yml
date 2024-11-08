@@ -54,6 +54,9 @@ Style/UnlessElse:
 Style/UnlessLogicalOperators:
   Enabled: true
 
+Style/MutableConstant:
+  Enabled: true
+
 Lint/Debugger:
   Enabled: true
 
