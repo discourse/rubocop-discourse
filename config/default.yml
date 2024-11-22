@@ -90,3 +90,9 @@ Discourse/Plugins/UseRequireRelative:
 
 Discourse/Plugins/NoMonkeyPatching:
   Enabled: true
+
+Discourse/Services/GroupKeywords:
+  Enabled: true
+
+Discourse/Services/EmptyLinesAroundBlocks:
+  Enabled: true
