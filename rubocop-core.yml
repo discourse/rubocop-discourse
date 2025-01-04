@@ -39,8 +39,7 @@ Style/GlobalVars:
   Exclude:
     - "lib/tasks/**/*"
     - "script/**/*"
-    - "spec/**/*.rb"
-    - "plugins/*/spec/**/*"
+    - "**/spec/**/*"
 
 Style/InvertibleUnlessCondition:
   Enabled: true

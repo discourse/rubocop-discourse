@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require "spec_helper"
-
-describe RuboCop::Cop::Discourse::FabricatorShorthand, :config do
+RSpec.describe RuboCop::Cop::Discourse::FabricatorShorthand, :config do
   subject(:cop) { described_class.new(config) }
 
   let(:config) { RuboCop::Config.new }

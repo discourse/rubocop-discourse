@@ -13,13 +13,13 @@ AllCops:
   SuggestExtensions: false
   DisabledByDefault: true
   Exclude:
-    - 'db/schema.rb'
-    - 'bundle/**/*'
-    - 'vendor/**/*'
-    - '**/node_modules/**/*'
-    - 'public/**/*'
-    - 'plugins/**/gems/**/*'
-    - 'plugins/**/vendor/**/*'
+    - "db/schema.rb"
+    - "bundle/**/*"
+    - "vendor/**/*"
+    - "**/node_modules/**/*"
+    - "public/**/*"
+    - "plugins/**/gems/**/*"
+    - "plugins/**/vendor/**/*"
 
 Discourse:
   Enabled: true
@@ -27,5 +27,4 @@ Discourse:
 Discourse/FabricatorShorthand:
   Enabled: true
   Include:
-    - 'spec/**/*_spec.rb'
-    - 'plugins/*/spec/**/*_spec.rb'
+    - "**/spec/**/*"
