@@ -28,3 +28,4 @@ Discourse/FabricatorShorthand:
   Enabled: true
   Include:
     - 'spec/**/*_spec.rb'
+    - 'plugins/*/spec/**/*_spec.rb'
