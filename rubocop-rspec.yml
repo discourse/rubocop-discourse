@@ -228,11 +228,11 @@ RSpec/Dialect:
   Enabled: true
   PreferredMethods:
     background: :before
-    scenario:   :it
-    xscenario:  :xit
-    given:      :let
-    given!:     :let!
-    feature:    :describe
+    scenario: :it
+    xscenario: :xit
+    given: :let
+    given!: :let!
+    feature: :describe
 
 RSpecRails/HttpStatus:
   Enabled: true

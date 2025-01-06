@@ -1,8 +1,7 @@
 Discourse/NoChdir:
   Enabled: true
   Exclude:
-    - 'spec/**/*' # Specs are run sequentially, so chdir can be used
-    - 'plugins/*/spec/**/*'
+    - "**/spec/**/*" # Specs are run sequentially, so chdir can be used
 
 Discourse/NoTimeNewWithoutArgs:
   Enabled: true
@@ -13,8 +12,8 @@ Discourse/NoURIEscapeEncode:
 Discourse/NoAddReferenceOrAliasesActiveRecordMigration:
   Enabled: true
   Include:
-    - '**/db/migrate/*'
-    - '**/db/post_migrate/*'
+    - "**/db/migrate/*"
+    - "**/db/post_migrate/*"
 
 Discourse/NoNokogiriHtmlFragment:
   Enabled: true
@@ -22,51 +21,45 @@ Discourse/NoNokogiriHtmlFragment:
 Discourse/NoResetColumnInformationInMigrations:
   Enabled: false
   Include:
-    - '**/db/migrate/*'
-    - '**/db/post_migrate/*'
+    - "**/db/migrate/*"
+    - "**/db/post_migrate/*"
 
 # Specs
 
 Discourse/NoDirectMultisiteManipulation:
   Enabled: true
-  Patterns:
-    - _spec.rb
-    - '(?:^|/)spec/'
+  Include:
+    - "**/spec/**/*"
 
 Discourse/TimeEqMatcher:
   Enabled: true
-  Patterns:
-    - _spec.rb
-    - '(?:^|/)spec/'
+  Include:
+    - "**/spec/**/*"
 
 Discourse/NoJsonParseResponse:
   Enabled: false
-  Patterns:
-    - _spec.rb
-    - '(?:^|/)spec/'
+  Include:
+    - "**/spec/**/*"
 
 Discourse/NoMockingJobs:
   Enabled: true
-  Patterns:
-    - _spec.rb
-    - '(?:^|/)spec/'
+  Include:
+    - "**/spec/**/*"
 
 Discourse/OnlyTopLevelMultisiteSpecs:
   Enabled: true
-  Patterns:
-    - _spec.rb
-    - '(?:^|/)spec/'
+  Include:
+    - "**/spec/**/*"
 
 Discourse/NoMixingMultisiteAndStandardSpecs:
   Enabled: true
-  Patterns:
-    - _spec.rb
-    - '(?:^|/)spec/'
+  Include:
+    - "**/spec/**/*"
 
 Discourse/Plugins/CallRequiresPlugin:
   Enabled: true
   Include:
-    - 'app/controllers/**/*'
+    - "app/controllers/**/*"
 
 Discourse/Plugins/UsePluginInstanceOn:
   Enabled: true
@@ -74,16 +67,16 @@ Discourse/Plugins/UsePluginInstanceOn:
 Discourse/Plugins/NamespaceMethods:
   Enabled: true
   Exclude:
-    - '**/spec/**/*'
-    - '**/tasks/**/*.rake'
-    - '**/db/fixtures/**/*'
+    - "**/spec/**/*"
+    - "**/tasks/**/*.rake"
+    - "**/db/fixtures/**/*"
 
 Discourse/Plugins/NamespaceConstants:
   Enabled: true
   Exclude:
-    - '**/spec/**/*'
-    - '**/tasks/**/*.rake'
-    - '**/db/fixtures/**/*'
+    - "**/spec/**/*"
+    - "**/tasks/**/*.rake"
+    - "**/db/fixtures/**/*"
 
 Discourse/Plugins/UseRequireRelative:
   Enabled: true
