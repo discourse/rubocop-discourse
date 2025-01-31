@@ -128,6 +128,23 @@ RSpec.describe RuboCop::Cop::Discourse::Services::EmptyLinesAroundBlocks,
     end
 
     context "when blocks are nested" do
+      context "when there is just one nested block" do
+        it "does not register an offense" do
+          expect_no_offenses(<<~RUBY)
+            class MyService
+              include Service::Base
+
+              transaction do
+                try do
+                  step :first_step
+                  step :second_step
+                end
+              end
+            end
+          RUBY
+        end
+      end
+
       context "when the nested block is in the first position" do
         context "when there is no empty line before" do
           it "does not register an offense" do

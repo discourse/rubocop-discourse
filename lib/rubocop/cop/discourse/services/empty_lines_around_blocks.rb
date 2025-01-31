@@ -53,7 +53,7 @@ module RuboCop
           def on_block(node)
             return unless service?
             return unless top_level_block?(node)
-            return if node.single_line?
+            return if node.single_line? || single_block?(node)
 
             if missing_empty_lines?(node)
               add_offense(node, message: MSG) do |corrector|
@@ -77,6 +77,10 @@ module RuboCop
           end
 
           private
+
+          def single_block?(node)
+            !node.ancestors.first.begin_type?
+          end
 
           def service?
             @service
