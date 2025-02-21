@@ -6,5 +6,6 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
-  gem 'byebug'
+  gem "syntax_tree"
+  gem "byebug"
 end
