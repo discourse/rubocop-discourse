@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.metadata["default_lint_roller_plugin"] = "RuboCop::Discourse::Plugin"
 
   s.add_runtime_dependency "activesupport", ">= 6.1"
-  s.add_runtime_dependency "rubocop", ">= 1.72.0"
+  s.add_runtime_dependency "rubocop", ">= 1.73.2"
   s.add_runtime_dependency "rubocop-rspec", ">= 3.0.1"
   s.add_runtime_dependency "rubocop-factory_bot", ">= 2.27.0"
   s.add_runtime_dependency "rubocop-capybara", ">= 2.22.0"
