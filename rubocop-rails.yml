@@ -12,3 +12,98 @@ Rails/EnumUniqueness:
 
 Rails/ReversibleMigrationMethodDefinition:
   Enabled: true
+
+Rails/ActiveSupportAliases:
+  Enabled: true
+
+Rails/AddColumnIndex:
+  Enabled: true
+  AutoCorrect: false
+
+Rails/AttributeDefaultBlockValue:
+  Enabled: true
+
+Rails/DurationArithmetic:
+  Enabled: true
+
+Rails/EnvLocal:
+  Enabled: true
+
+Rails/EnvironmentComparison:
+  Enabled: true
+
+Rails/ExpandedDateRange:
+  Enabled: true
+
+Rails/FindBy:
+  Enabled: true
+
+Rails/FindById:
+  Enabled: true
+
+Rails/HttpStatus:
+  Enabled: true
+
+Rails/IgnoredSkipActionFilterOption:
+  Enabled: true
+  AutoCorrect: false
+
+Rails/IndexBy:
+  Enabled: true
+
+Rails/MatchRoute:
+  Enabled: true
+
+Rails/PluralizationGrammar:
+  Enabled: true
+
+Rails/Presence:
+  Enabled: true
+
+Rails/Present:
+  Enabled: true
+  Exclude:
+    - "bin/*"
+
+Rails/ReadWriteAttribute:
+  Enabled: true
+
+Rails/RedundantAllowNil:
+  Enabled: true
+
+Rails/RedundantReceiverInWithOptions:
+  Enabled: true
+
+Rails/RenderPlainText:
+  Enabled: true
+
+Rails/RootPublicPath:
+  Enabled: true
+
+Rails/ScopeArgs:
+  Enabled: true
+
+Rails/StripHeredoc:
+  Enabled: true
+
+Rails/ToFormattedS:
+  Enabled: true
+  EnforcedStyle: to_formatted_s
+
+Rails/TopLevelHashWithIndifferentAccess:
+  Enabled: true
+
+Rails/Validation:
+  Enabled: true
+
+Rails/UnusedRenderContent:
+  Enabled: true
+
+Rails/WhereMissing:
+  Enabled: true
+
+Rails/WhereNot:
+  Enabled: true
+
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
