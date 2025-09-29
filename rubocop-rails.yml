@@ -44,10 +44,6 @@ Rails/FindById:
 Rails/HttpStatus:
   Enabled: true
 
-Rails/IgnoredSkipActionFilterOption:
-  Enabled: true
-  AutoCorrect: false
-
 Rails/IndexBy:
   Enabled: true
 
