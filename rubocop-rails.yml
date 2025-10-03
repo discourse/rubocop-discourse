@@ -95,8 +95,9 @@ Rails/Validation:
 Rails/UnusedRenderContent:
   Enabled: true
 
+# NOTE: This is unsafe due to a Rails bug (https://github.com/rails/rails/issues/55130)
 Rails/WhereMissing:
-  Enabled: true
+  Enabled: false
 
 # NOTE: This is unsafe as the autofix breaks mini_sql code (that only looks like AR code)
 Rails/WhereNot:
