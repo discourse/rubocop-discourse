@@ -58,6 +58,7 @@ Rails/Presence:
 
 Rails/Present:
   Enabled: true
+  NotNilAndNotEmpty: false # this one is based on an incorrect premise that empty? and blank? are equivalent
   Exclude:
     - "bin/*"
 

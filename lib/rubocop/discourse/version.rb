@@ -2,6 +2,6 @@
 
 module RuboCop
   module Discourse
-    VERSION = "3.13.2"
+    VERSION = "3.13.3"
   end
 end
