@@ -12,12 +12,25 @@ Gem::Specification.new do |s|
   s.license = "MIT"
   s.homepage = "https://github.com/discourse/rubocop-discourse"
 
-  s.files = `git ls-files`.split($/)
+  config_files = %w[
+    default.yml
+    rubocop-core.yml
+    rubocop-layout.yml
+    rubocop-capybara.yml
+    rubocop-factory_bot.yml
+    rubocop-rspec.yml
+    rubocop-rails.yml
+    stree-compat.yml
+    config/default.yml
+  ]
+
+  s.files = %w[LICENSE README.md rubocop-discourse.gemspec] + config_files + Dir["lib/**/*.rb"]
   s.require_paths = ["lib"]
   s.metadata["default_lint_roller_plugin"] = "RuboCop::Discourse::Plugin"
 
+  s.required_ruby_version = ">= 3.0"
   s.add_runtime_dependency "activesupport", ">= 6.1"
-  s.add_runtime_dependency "rubocop", ">= 1.73.2"
+  s.add_runtime_dependency "rubocop-discourse-base", ">= 1.0.0"
   s.add_runtime_dependency "rubocop-rspec", ">= 3.0.1"
   s.add_runtime_dependency "rubocop-factory_bot", ">= 2.27.0"
   s.add_runtime_dependency "rubocop-capybara", ">= 2.22.0"

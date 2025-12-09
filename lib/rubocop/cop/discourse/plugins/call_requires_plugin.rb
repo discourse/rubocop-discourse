@@ -44,8 +44,7 @@ module RuboCop
 
           def requires_plugin_present_in_parent_classes(node)
             return unless processed_source.path
-            controller_path =
-              base_controller_path(node.parent_class&.const_name.to_s)
+            controller_path = base_controller_path(node.parent_class&.const_name.to_s)
             return unless controller_path
             Commissioner
               .new([self.class.new(config, @options)])

@@ -28,9 +28,7 @@ RSpec.describe RuboCop::Cop::Discourse::Plugins::CallRequiresPlugin, :config do
   end
 
   context "when inheriting" do
-    let(:controllers_path) do
-      Pathname.new("#{__dir__}/../../../../fixtures/controllers").cleanpath
-    end
+    let(:controllers_path) { Pathname.new("#{__dir__}/../../../../fixtures/controllers").cleanpath }
 
     before do
       # As we’re providing real files, we need to get rid of the default config
@@ -56,9 +54,7 @@ RSpec.describe RuboCop::Cop::Discourse::Plugins::CallRequiresPlugin, :config do
 
     context "when parent controller can’t be located" do
       context "when parent controller is namespaced" do
-        let(:controller) do
-          controllers_path.join("namespaced_parent_controller.rb")
-        end
+        let(:controller) { controllers_path.join("namespaced_parent_controller.rb") }
 
         it "registers an offense" do
           expect_offense(controller.read, controller.to_s)
@@ -66,9 +62,7 @@ RSpec.describe RuboCop::Cop::Discourse::Plugins::CallRequiresPlugin, :config do
       end
 
       context "when parent controller is not namespaced" do
-        let(:controller) do
-          controllers_path.join("inherit_from_outside_controller.rb")
-        end
+        let(:controller) { controllers_path.join("inherit_from_outside_controller.rb") }
 
         it "registers an offense" do
           expect_offense(controller.read, controller.to_s)

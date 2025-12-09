@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
@@ -25,13 +25,16 @@ jobs:
       - name: Rspec
         run: bundle exec rspec spec
 
+      - name: Check Ruby formatting with Syntax Tree
+        run: bundle exec stree check Gemfile Rakefile *.gemspec "lib/**/*.rb" "spec/**/*.rb"
+
   publish:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Release Gem
         uses: discourse/publish-rubygems-action@v3
