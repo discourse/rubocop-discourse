@@ -57,18 +57,14 @@ module RuboCop
 
             if missing_empty_lines?(node)
               add_offense(node, message: MSG) do |corrector|
-                if missing_empty_line_before?(node) &&
-                     corrected_after.exclude?(node.left_sibling)
+                if missing_empty_line_before?(node) && corrected_after.exclude?(node.left_sibling)
                   corrected_before << node
                   corrector.insert_before(
-                    node.loc.expression.adjust(
-                      begin_pos: -node.loc.expression.column
-                    ),
-                    "\n"
+                    node.loc.expression.adjust(begin_pos: -node.loc.expression.column),
+                    "\n",
                   )
                 end
-                if missing_empty_line_after?(node) &&
-                     corrected_before.exclude?(node.right_sibling)
+                if missing_empty_line_after?(node) && corrected_before.exclude?(node.right_sibling)
                   corrected_after << node
                   corrector.insert_after(node.loc.end, "\n")
                 end
@@ -91,13 +87,11 @@ module RuboCop
           end
 
           def missing_empty_line_before?(node)
-            processed_source[node.loc.expression.line - 2].present? &&
-              node.left_siblings.present?
+            processed_source[node.loc.expression.line - 2].present? && node.left_siblings.present?
           end
 
           def missing_empty_line_after?(node)
-            processed_source[node.loc.end.line].present? &&
-              node.right_siblings.present?
+            processed_source[node.loc.end.line].present? && node.right_siblings.present?
           end
 
           def corrected_before

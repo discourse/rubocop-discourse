@@ -46,9 +46,7 @@ module RuboCop
 
             add_offense(node, message: MSG) do |corrector|
               range =
-                node.loc.expression.end.with(
-                  end_pos: node.right_sibling.loc.expression.begin_pos
-                )
+                node.loc.expression.end.with(end_pos: node.right_sibling.loc.expression.begin_pos)
               content = range.source.gsub(/^(\n)+/, "\n")
               corrector.replace(range, content)
             end
@@ -62,10 +60,7 @@ module RuboCop
 
           def extra_empty_line_after?(node)
             processed_source[node.loc.expression.line].blank? &&
-              (
-                service_keyword?(node.right_sibling) ||
-                  single_line_block?(node.right_sibling)
-              )
+              (service_keyword?(node.right_sibling) || single_line_block?(node.right_sibling))
           end
 
           def service_keyword?(node)

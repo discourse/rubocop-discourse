@@ -46,14 +46,11 @@ module RuboCop
         #   add_to_serializer(:user, :new_method) { do_processing }
         #
         class NoMonkeyPatching < Base
-          MSG =
-            "Don’t reopen existing classes. Instead, create a mixin and use `prepend`."
-          MSG_CLASS_EVAL =
-            "Don’t call `class_eval`. Instead, create a mixin and use `prepend`."
+          MSG = "Don’t reopen existing classes. Instead, create a mixin and use `prepend`."
+          MSG_CLASS_EVAL = "Don’t call `class_eval`. Instead, create a mixin and use `prepend`."
           MSG_CLASS_EVAL_SERIALIZERS =
             "Don’t call `class_eval` on a serializer. If you’re adding new methods, use `add_to_serializer`. Otherwise, create a mixin and use `prepend`."
-          MSG_SERIALIZERS =
-            "Don’t reopen serializers. Instead, use `add_to_serializer`."
+          MSG_SERIALIZERS = "Don’t reopen serializers. Instead, use `add_to_serializer`."
           RESTRICT_ON_SEND = [:class_eval].freeze
 
           def_node_matcher :existing_class?, <<~MATCHER
@@ -65,18 +62,14 @@ module RuboCop
           MATCHER
 
           def on_send(node)
-            if serializer?(node)
-              return add_offense(node, message: MSG_CLASS_EVAL_SERIALIZERS)
-            end
+            return add_offense(node, message: MSG_CLASS_EVAL_SERIALIZERS) if serializer?(node)
             add_offense(node, message: MSG_CLASS_EVAL)
           end
 
           def on_class(node)
             return unless in_plugin_rb_file?
             return unless existing_class?(node)
-            if serializer?(node)
-              return add_offense(node, message: MSG_SERIALIZERS)
-            end
+            return add_offense(node, message: MSG_SERIALIZERS) if serializer?(node)
             add_offense(node, message: MSG)
           end
 
