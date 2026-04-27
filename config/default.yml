@@ -94,3 +94,6 @@ Discourse/Services/GroupKeywords:
 
 Discourse/Services/EmptyLinesAroundBlocks:
   Enabled: true
+
+Discourse/Services/MutableAttributeDefault:
+  Enabled: true
