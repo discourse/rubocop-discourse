@@ -1,2 +1,22 @@
 inherit_gem:
   rubocop-discourse-base: rubocop-core.yml
+
+Style/ClassMethodsDefinitions:
+  Enabled: true
+  EnforcedStyle: self_class
+
+Style/ConstantVisibility:
+  Enabled: true
+  IgnoreModules: false
+
+Layout/ClassStructure:
+  Enabled: true
+  AutoCorrect: false
+  ExpectedOrder:
+    - module_inclusion
+    - constants
+    - class_singleton
+    - initializer
+    - public_methods
+    - protected_methods
+    - private_methods

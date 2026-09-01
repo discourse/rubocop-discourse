@@ -5,7 +5,9 @@ module RuboCop
     module Discourse
       class PrivateDeclaration < Base
         MSG = "Pass one name to `%<declaration>s` and place it immediately after its definition."
-        RESTRICT_ON_SEND = %i[private_class_method private_constant].freeze
+        public_constant :MSG
+        RESTRICT_ON_SEND = %i[private_constant].freeze
+        public_constant :RESTRICT_ON_SEND
 
         def on_send(node)
           return if valid_declaration?(node)
@@ -21,21 +23,15 @@ module RuboCop
           name = literal_name(node.first_argument)
           return false unless name
 
-          matching_definition?(node.method_name, node.left_sibling, name)
+          matching_definition?(node.left_sibling, name)
         end
 
         def literal_name(argument)
           argument.value.to_sym if argument&.type?(:sym, :str)
         end
 
-        def matching_definition?(declaration, definition, name)
-          case declaration
-          when :private_constant
-            definition&.casgn_type? && definition.children.first.nil? && definition.name == name
-          when :private_class_method
-            definition&.defs_type? && definition.receiver.self_type? &&
-              definition.method_name == name
-          end
+        def matching_definition?(definition, name)
+          definition&.casgn_type? && definition.children.first.nil? && definition.name == name
         end
       end
     end

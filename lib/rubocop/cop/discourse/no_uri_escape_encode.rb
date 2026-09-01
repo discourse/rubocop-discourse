@@ -18,6 +18,7 @@ module RuboCop
       class NoURIEscapeEncode < Base
         MSG =
           "URI.escape, URI.encode, URI.unescape, URI.decode are deprecated and should not be used."
+        public_constant :MSG
 
         def_node_matcher :using_uri_escape?, <<-MATCHER
           (send (const nil? :URI) :escape ...)

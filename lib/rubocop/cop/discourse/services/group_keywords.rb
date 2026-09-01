@@ -23,7 +23,9 @@ module RuboCop
           extend AutoCorrector
 
           MSG = "Group one-liner steps together by removing extra empty lines."
+          public_constant :MSG
           RESTRICT_ON_SEND = %i[step model policy].freeze
+          public_constant :RESTRICT_ON_SEND
 
           def_node_matcher :service_include?, <<~MATCHER
             (class _ _

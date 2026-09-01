@@ -18,7 +18,9 @@ module RuboCop
         extend AutoCorrector
 
         MSG = "Remove redundant `type: :system` and `system: true` metadata from `RSpec.describe`."
+        public_constant :MSG
         RESTRICT_ON_SEND = %i[describe].freeze
+        public_constant :RESTRICT_ON_SEND
 
         def_node_matcher :describe?, <<~PATTERN
           (send

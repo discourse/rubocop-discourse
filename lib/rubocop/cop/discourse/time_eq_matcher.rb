@@ -13,6 +13,7 @@ module RuboCop
       #   expect(user.created_at).to eq_time(Time.zone.now)
       class TimeEqMatcher < Base
         MSG = "Use eq_time when testing timestamps"
+        public_constant :MSG
 
         def_node_matcher :using_eq_matcher_with_timestamp?, <<-MATCHER
           (send

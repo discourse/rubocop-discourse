@@ -13,6 +13,7 @@ module RuboCop
             "and we run migrations concurrently on multisite clusters. Using this " \
             "method also means ActiveRecord methods are being used in migration " \
             "which is discouraged at Discourse. Instead, you should write SQL in your migrations instead."
+        public_constant :MSG
 
         def on_send(node)
           return if node.method_name != :reset_column_information

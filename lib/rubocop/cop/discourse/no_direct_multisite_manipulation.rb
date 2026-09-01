@@ -19,6 +19,7 @@ module RuboCop
       class NoDirectMultisiteManipulation < Base
         MSG =
           "Use `type: :multisite` example setting instead of modifying `Rails.configuration.multisite`."
+        public_constant :MSG
 
         def_node_matcher :multisite_setter?, <<-MATCHER
           (send

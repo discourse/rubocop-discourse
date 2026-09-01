@@ -13,6 +13,7 @@ module RuboCop
       #   now = Time.zone.now
       class NoTimeNewWithoutArgs < Base
         MSG = "Use `Time.zone.now` instead of `Time.new` without arguments."
+        public_constant :MSG
 
         def_node_matcher :time_new_without_args?, <<-MATCHER
           (send (const nil? :Time) :new)

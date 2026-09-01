@@ -14,14 +14,14 @@ end
 
 ## Configuration
 
-Recommended (Syntax Tree-friendly, omits Layout cops so it can be used with the formatter):
+Recommended (Syntax Tree-friendly, omits formatter-owned Layout cops):
 
 ```yml
 inherit_gem:
   rubocop-discourse: stree-compat.yml
 ```
 
-`stree-compat.yml` includes Discourse cops plus core/RSpec/Rails/Capybara/FactoryBot, but leaves layout to Syntax Tree.
+`stree-compat.yml` includes Discourse cops plus core/RSpec/Rails/Capybara/FactoryBot, but leaves formatting to Syntax Tree. It still enables `Layout/ClassStructure` because that cop enforces semantic class organization instead of whitespace.
 
 Base config with layout cops (for projects not using Syntax Tree):
 
@@ -31,6 +31,12 @@ inherit_gem:
 ```
 
 `default.yml` is kept for backwards compatibility and pulls in `stree-compat.yml` plus `rubocop-layout.yml`.
+
+Both configurations group class methods in a `class << self` block. They order class bodies as module inclusions, constants, the singleton-class block, `initialize`, then public, protected, and private instance methods.
+
+Every class and module constant must also be declared with `public_constant` or `private_constant`.
+
+`Layout/ClassStructure` autocorrection is disabled because moving class definitions can change runtime behavior. Reorder existing classes manually when adopting this configuration.
 
 Then run `bundle exec rubocop` as usual.
 

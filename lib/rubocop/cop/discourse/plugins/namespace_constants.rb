@@ -17,6 +17,7 @@ module RuboCop
         #
         class NamespaceConstants < Base
           MSG = "Don’t define constants outside a class or a module."
+          public_constant :MSG
 
           def on_casgn(node)
             return if inside_namespace?(node)

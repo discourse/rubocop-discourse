@@ -16,8 +16,11 @@ module RuboCop
         class UsePluginInstanceOn < Base
           MSG =
             "Use `on` instead of `DiscourseEvent.on` as the latter will listen to events even if the plugin is disabled."
+          public_constant :MSG
           NOT_OUTSIDE_PLUGIN_RB = "Don’t call `DiscourseEvent.on` outside `plugin.rb`."
+          private_constant :NOT_OUTSIDE_PLUGIN_RB
           RESTRICT_ON_SEND = [:on].freeze
+          public_constant :RESTRICT_ON_SEND
 
           def_node_matcher :discourse_event_on?, <<~MATCHER
             (send (const nil? :DiscourseEvent) :on _)

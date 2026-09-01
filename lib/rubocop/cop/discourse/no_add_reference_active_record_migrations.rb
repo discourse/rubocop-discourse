@@ -52,6 +52,7 @@ module RuboCop
           add the new column and CREATE INDEX CONCURRENTLY. Use the IF NOT EXISTS clause
           to make the migration re-runnable if it fails partway through.
         MSG
+        public_constant :MSG
 
         def_node_matcher :using_add_reference?, <<-MATCHER
           (send nil? :add_reference ...)

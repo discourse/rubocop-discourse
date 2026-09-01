@@ -24,6 +24,7 @@ module RuboCop
         class CallRequiresPlugin < Base
           MSG =
             "Use `requires_plugin` in controllers to prevent routes from being accessible when plugin is disabled."
+          public_constant :MSG
 
           def_node_matcher :requires_plugin_present?, <<~MATCHER
             (class _ _

@@ -27,7 +27,9 @@ module RuboCop
 
           MSG =
             "Mutable `default: %<source>s` is shared across all instances; wrap it in a proc: `-> { %<source>s }`."
+          public_constant :MSG
           RESTRICT_ON_SEND = %i[attribute].freeze
+          public_constant :RESTRICT_ON_SEND
 
           def_node_matcher :service_include?, <<~MATCHER
             (class _ _

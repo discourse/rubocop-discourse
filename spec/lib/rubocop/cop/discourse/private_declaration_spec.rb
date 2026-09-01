@@ -60,60 +60,6 @@ RSpec.describe RuboCop::Cop::Discourse::PrivateDeclaration, :config do
     RUBY
   end
 
-  it "accepts private class methods declared one at a time after their definitions" do
-    expect_no_offenses(<<~RUBY)
-      class Example
-        def self.first
-        end
-        private_class_method :first
-
-        def self.second
-        end
-        private_class_method :second
-      end
-    RUBY
-  end
-
-  it "rejects a private class method declaration with multiple names" do
-    expect_offense(<<~RUBY)
-      class Example
-        def self.first
-        end
-
-        def self.second
-        end
-        private_class_method :first, :second
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Discourse/PrivateDeclaration: Pass one name to `private_class_method` and place it immediately after its definition.
-      end
-    RUBY
-  end
-
-  it "rejects a private class method declaration separated from its definition" do
-    expect_offense(<<~RUBY)
-      class Example
-        def self.first
-        end
-        do_something
-        private_class_method :first
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^ Discourse/PrivateDeclaration: Pass one name to `private_class_method` and place it immediately after its definition.
-      end
-    RUBY
-  end
-
-  it "rejects a private class method declaration after a different definition" do
-    expect_offense(<<~RUBY)
-      class Example
-        def self.first
-        end
-
-        def self.second
-        end
-        private_class_method :first
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^ Discourse/PrivateDeclaration: Pass one name to `private_class_method` and place it immediately after its definition.
-      end
-    RUBY
-  end
-
   it "rejects dynamic private declarations" do
     expect_offense(<<~RUBY)
       class Example

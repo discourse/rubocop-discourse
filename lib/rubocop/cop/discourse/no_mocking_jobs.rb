@@ -6,6 +6,7 @@ module RuboCop
       class NoMockingJobs < Base
         MSG =
           "Use the test helpers provided by Sidekiq instead of mocking `Jobs.expects(:enqueue)`."
+        public_constant :MSG
 
         def_node_matcher :mocking_jobs_enqueue?, <<~MATCHER
         (send (const nil? :Jobs) :expects (:sym :enqueue))
