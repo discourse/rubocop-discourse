@@ -6,9 +6,6 @@ Discourse/NoChdir:
 Discourse/NoTimeNewWithoutArgs:
   Enabled: true
 
-Discourse/PrivateDeclaration:
-  Enabled: true
-
 Discourse/NoURIEscapeEncode:
   Enabled: true
 

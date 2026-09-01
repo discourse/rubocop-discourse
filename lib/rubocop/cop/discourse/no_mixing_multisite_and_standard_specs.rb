@@ -26,7 +26,6 @@ module RuboCop
       class NoMixingMultisiteAndStandardSpecs < Base
         MSG =
           "Do not mix multisite and standard specs. Consider moving multisite describes to a separate file."
-        public_constant :MSG
 
         def initialize(config = nil, options = nil)
           super

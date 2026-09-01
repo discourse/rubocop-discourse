@@ -19,7 +19,6 @@ module RuboCop
         #
         class NamespaceMethods < Base
           MSG = "Don’t define methods outside a class or a module."
-          public_constant :MSG
 
           def on_def(node)
             return if inside_namespace?(node)

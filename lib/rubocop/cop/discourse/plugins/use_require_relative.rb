@@ -15,9 +15,7 @@ module RuboCop
         #
         class UseRequireRelative < Base
           MSG = "Use `require_relative` instead of `load`."
-          public_constant :MSG
           RESTRICT_ON_SEND = [:load].freeze
-          public_constant :RESTRICT_ON_SEND
 
           def_node_matcher :load_called?, <<~MATCHER
             (send nil? :load _)

@@ -13,7 +13,6 @@ module RuboCop
       #   expect(response.parsed_body).to eq({})
       class NoJsonParseResponse < Base
         MSG = "Use `response.parsed_body` instead of `JSON.parse(response.body)` in specs."
-        public_constant :MSG
 
         def_node_matcher :json_parse_body?, <<-MATCHER
           (send

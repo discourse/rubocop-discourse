@@ -14,7 +14,6 @@ module RuboCop
       #   Nokogiri::HTML5.fragment("<p>test</p>")
       class NoNokogiriHtmlFragment < Base
         MSG = "Nokogiri::HTML.fragment is deprecated and should not be used."
-        public_constant :MSG
 
         def_node_matcher :using_nokogiri_html_fragment?, <<-MATCHER
           (send

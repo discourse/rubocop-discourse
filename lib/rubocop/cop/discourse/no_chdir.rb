@@ -15,7 +15,6 @@ module RuboCop
       #   Dir.chdir("test")
       class NoChdir < Base
         MSG = "Chdir is not thread safe."
-        public_constant :MSG
 
         def_node_matcher :using_dir_chdir?, <<-MATCHER
           (send (const nil? :Dir) :chdir ...)

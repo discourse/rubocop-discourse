@@ -31,7 +31,6 @@ module RuboCop
           extend AutoCorrector
 
           MSG = "Add empty lines around a step block."
-          public_constant :MSG
 
           def_node_matcher :service_include?, <<~MATCHER
             (class _ _

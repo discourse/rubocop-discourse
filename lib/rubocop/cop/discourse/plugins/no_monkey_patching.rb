@@ -47,16 +47,11 @@ module RuboCop
         #
         class NoMonkeyPatching < Base
           MSG = "Don’t reopen existing classes. Instead, create a mixin and use `prepend`."
-          public_constant :MSG
           MSG_CLASS_EVAL = "Don’t call `class_eval`. Instead, create a mixin and use `prepend`."
-          private_constant :MSG_CLASS_EVAL
           MSG_CLASS_EVAL_SERIALIZERS =
             "Don’t call `class_eval` on a serializer. If you’re adding new methods, use `add_to_serializer`. Otherwise, create a mixin and use `prepend`."
-          private_constant :MSG_CLASS_EVAL_SERIALIZERS
           MSG_SERIALIZERS = "Don’t reopen serializers. Instead, use `add_to_serializer`."
-          private_constant :MSG_SERIALIZERS
           RESTRICT_ON_SEND = [:class_eval].freeze
-          public_constant :RESTRICT_ON_SEND
 
           def_node_matcher :existing_class?, <<~MATCHER
             (class (const (cbase) _) ...)
