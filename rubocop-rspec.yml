@@ -40,5 +40,23 @@ RSpec/EmptyLineAfterFinalLet:
 RSpec/EmptyLineAfterHook:
   Enabled: true
 
+RSpec/ExampleWording:
+  Enabled: true
+  DisallowedExamples:
+    - works
+    - succeeds
+    - fails
+    - does something
+    - behaves correctly
+    - handles it
+    - handles errors
+    - returns the expected result
+
+RSpec/RepeatedDescription:
+  Enabled: true
+
+RSpec/RepeatedExampleGroupDescription:
+  Enabled: true
+
 RSpecRails/HttpStatus:
   Enabled: true
