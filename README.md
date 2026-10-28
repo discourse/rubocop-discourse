@@ -41,3 +41,14 @@ Switching an existing project to Syntax Tree:
 -  rubocop-discourse: default.yml # includes layout cops
 +  rubocop-discourse: stree-compat.yml # defers layout to Syntax Tree
 ```
+
+## RSpec definitions in iterators
+
+`Discourse/NoIterationOverRSpecDefinitions` enforces the RSpec style guide's
+[rule against generating tests with iterators](https://rspec.rubystyle.guide/#it-in-iterators).
+It reports example and group declarations inside iterator blocks or Ruby loops.
+Write separate `describe`, `context`, and `it` declarations for each scenario.
+Loops inside examples and setup hooks remain allowed.
+
+The cop recognizes RSpec aliases configured through `RSpec/Language` and is
+enabled for spec files by default. It does not autocorrect generated tests.
