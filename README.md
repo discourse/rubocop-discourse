@@ -50,5 +50,38 @@ It reports example and group declarations inside iterator blocks or Ruby loops.
 Write separate `describe`, `context`, and `it` declarations for each scenario.
 Loops inside examples and setup hooks remain allowed.
 
+For example, replace an iterator that defines examples:
+
+```ruby
+RSpec.describe "topic lists" do
+  %w[latest top].each do |filter|
+    it "returns the #{filter} list" do
+      get "/#{filter}"
+      expect(response.status).to eq(200)
+    end
+  end
+end
+```
+
+Write each example explicitly instead:
+
+```ruby
+RSpec.describe "topic lists" do
+  it "returns the latest list" do
+    get "/latest"
+    expect(response.status).to eq(200)
+  end
+
+  it "returns the top list" do
+    get "/top"
+    expect(response.status).to eq(200)
+  end
+end
+```
+
+Prefer these direct examples for small cases, even when a few lines repeat.
+Shared examples remain appropriate for substantial common behavior, but are
+not required to satisfy this cop.
+
 The cop recognizes RSpec aliases configured through `RSpec/Language` and is
 enabled for spec files by default. It does not autocorrect generated tests.
