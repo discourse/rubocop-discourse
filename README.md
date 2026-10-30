@@ -53,7 +53,7 @@ Loops inside examples and setup hooks remain allowed.
 For example, replace an iterator that defines examples:
 
 ```ruby
-RSpec.describe "topic lists" do
+RSpec.describe "topic lists", type: :request do
   %w[latest top].each do |filter|
     it "returns the #{filter} list" do
       get "/#{filter}"
@@ -66,7 +66,7 @@ end
 Write each example explicitly instead:
 
 ```ruby
-RSpec.describe "topic lists" do
+RSpec.describe "topic lists", type: :request do
   it "returns the latest list" do
     get "/latest"
     expect(response.status).to eq(200)
@@ -80,8 +80,31 @@ end
 ```
 
 Prefer these direct examples for small cases, even when a few lines repeat.
-Shared examples remain appropriate for substantial common behavior, but are
-not required to satisfy this cop.
+For a repeated contract or a larger input matrix, use named shared examples
+with explicit inclusions. Each case remains an independently runnable RSpec
+example:
+
+```ruby
+RSpec.describe "topic lists", type: :request do
+  shared_examples "a public topic list" do |filter|
+    it "returns the #{filter} list" do
+      get "/#{filter}.json"
+
+      expect(response.status).to eq(200)
+      expect(response.parsed_body).to include("topic_list")
+    end
+  end
+
+  it_behaves_like "a public topic list", "latest"
+  it_behaves_like "a public topic list", "top"
+end
+```
+
+`it_behaves_like` creates a separate group for each inclusion, so selecting an
+inclusion by file and line runs that case. Keep each case as its own example.
+Moving the input matrix into a loop inside one `it` block makes an individual
+case harder to rerun. Shared examples are optional, and should name the
+behavior they share.
 
 The cop recognizes RSpec aliases configured through `RSpec/Language` and is
 enabled for spec files by default. It does not autocorrect generated tests.
