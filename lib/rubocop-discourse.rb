@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require "rubocop"
+require "yaml"
 require "lint_roller"
+require "rubocop/rspec/language"
 require "active_support"
 require "active_support/core_ext/string/inflections"
 require "active_support/core_ext/object/blank"
