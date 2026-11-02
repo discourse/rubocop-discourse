@@ -2,6 +2,8 @@
 
 require "rubocop"
 require "lint_roller"
+require "rubocop/rspec/language"
+require "rubocop/cop/rspec/base"
 require "active_support"
 require "active_support/core_ext/string/inflections"
 require "active_support/core_ext/object/blank"
