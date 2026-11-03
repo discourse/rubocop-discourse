@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 3.0"
   s.add_runtime_dependency "activesupport", ">= 6.1"
+  s.add_runtime_dependency "rubocop", ">= 1.82.0"
   s.add_runtime_dependency "rubocop-discourse-base", ">= 1.0.0"
   s.add_runtime_dependency "rubocop-rspec", ">= 3.0.1"
   s.add_runtime_dependency "rubocop-factory_bot", ">= 2.27.0"
