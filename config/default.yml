@@ -26,6 +26,12 @@ Discourse/NoResetColumnInformationInMigrations:
 
 # Specs
 
+Discourse/NoIterationOverRSpecDefinitions:
+  Description: "Do not generate RSpec examples or groups with iterators."
+  Enabled: true
+  Include:
+    - "**/spec/**/*"
+
 Discourse/NoDirectMultisiteManipulation:
   Enabled: true
   Include:
