@@ -18,6 +18,16 @@ Discourse/NoAddReferenceOrAliasesActiveRecordMigration:
 Discourse/NoNokogiriHtmlFragment:
   Enabled: true
 
+Discourse/NoTlsVerificationBypass:
+  Description: "Do not disable TLS certificate or hostname verification."
+  Enabled: true
+  Exclude:
+    - "**/spec/**/*"
+
+Discourse/NoNetHttpSettingsInStartBlock:
+  Description: "Do not assign connection settings inside the block given to `Net::HTTP.start`."
+  Enabled: true
+
 Discourse/NoResetColumnInformationInMigrations:
   Enabled: false
   Include:
